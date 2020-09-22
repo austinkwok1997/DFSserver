@@ -39,4 +39,5 @@ class NBAPicker:
             if "C" in X["position"][player]:
                 cIndex.append(player)
         players = knapsack.solve(salary=int(self.salary/100),cost=[x / 100 for x in X["salary"]],points=X["points"],n=X["salary"].size)
-        print(X["player"][players])
+        players = players[:8]
+        return(X.iloc[players,:])
